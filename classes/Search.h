@@ -6,20 +6,33 @@
 class Search {
 
 private:
+//STRING QUE VAI ARMAZENAR A EXPRESSÃO (DOCUMENTO)
     string expression;
+//VETOR DE PALAVRAS QUE VAI SETAR OS TERMOS
     vector<Word> terms;
+
+//COLECAO CONJUNTO DE ARQUIVOS
     Collection collection;
+//VETOR DE DOCUMENTOS EM QUE ALGUM TERMO DA EXPRESSÃO PESQUISADA ESTA CONTIDO
     vector<Document> documentsFound;
+//IMPORTANCIA DA PALAVRA DENTRO DA COLECAO
     map<string, float> wordImportance;
+
+  //VECTOR QUE VAI CARREGARR A COORDENADA W(IDF, IDF)
     map<map<string, string>, float> coordinate;
 
+//METODO DE CARREGAR O TERMO
     void loadTerms();
+//METODO QUE CARREGA OS DOCUMENTOS ACHADOS
     void loadDocumentsFound(Word word);
+//METODO QUE CARREGA A IMPORTANCIA DA PALAVRA
     void loadWordImportance();
+//METODO QUE CARREGA A COORDENADA
     void loadCoordinate();
 
 
 public:
+
     Search(const string &expression, Collection collection);
 
     const string &getExpression() const;

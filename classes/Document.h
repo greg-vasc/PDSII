@@ -6,21 +6,25 @@
 #include <map>
 #include "Word.h"
 
+//classe que vai setar o documento
 class Document {
 
 private:
+//STRING PARA ARMAZENAR O NOME
     string name, path;
+  // VECTOR PARA SEPARAR A PALAVRA
     vector<Word> words;
+  //VECTOR PARA SEPARAR A FREQUENCIA DE PALAVRAS
     map<string, int> wordFrquency;
-
+//FUNCAO QUE LE O ARQUIVO
     void read(string fullPath);
-
+//FUNCAO QUE CARREGA A FREQUENCIA DE PALAVRAS
     void loadWordFrequency(ifstream &file);
 
 public:
-
+//DOCUMENTO RECEBENDO AS VARIAVEIS
     Document(const string &name, const string &path);
-
+//CONST PARA RECEBER A STRING DA PALAVRA E GETNOME
     const string &getName() const;
 
     void setName(const string &name);
